@@ -57,7 +57,7 @@ input:focus{
     opacity: 0.55;
     position: relative;right: -30%;
 }
-#password_alert,#email_alert{
+#passwordAlert,#emailAlert{
     color: red;
     font-size: 60%;
     opacity: 0.7;
