@@ -19,6 +19,9 @@ function validate(email , password){
     if(document.getElementById('email_alert').innerHTML===''||document.getElementById('email_alert').innerHTML===''){
         return false;
     }
+    if(document.getElementById('email_alert').innerHTML==null||document.getElementById('email_alert').innerHTML==null){
+        return false;
+    }
     return true;
     
 }
@@ -30,16 +33,18 @@ function logIn(){
     const password=document.getElementById("password").value;
     var xhr =new XMLHttpRequest();
     const url='http://127.0.0.1:8000/api/loginAdmin';
-    if(!validate(email,password)) return ;
-    try{
-    xhr.open("POST", url, true);
-    xhr.send(JSON.stringify({
-        value: {"email": "bahringer.terrance@example.net",
-        "password": "password"}
-            }
-        )
-    );
-    }catch(e){
-        console.log(e);
-    }
+    if(validate(email,password)) return ;
+    console.log("Valid!");
+    window.location.href='../../home_screen/html/home.html';
+    // try{
+    // xhr.open("POST", url, true);
+    // xhr.send(JSON.stringify({
+    //     value: {"email": "bahringer.terrance@example.net",
+    //     "password": "password"}
+    //         }
+    //     )
+    // );
+    // }catch(e){
+    //     console.log(e);
+    // }
 }
