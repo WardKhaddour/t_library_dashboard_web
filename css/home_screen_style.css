@@ -2,11 +2,112 @@
     box-sizing: border-box;
     font-size: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    margin: 0;
+    padding: 0;
 }
 body{
-    background-image: url(../images/login_background.png);
-    background-size: cover;
+    background: url(../images/login_background.png) grey;
     background-repeat: no-repeat;
     background-clip: border-box;
+    background-position: 0 -3% ;
+    background-size:auto;
+    min-height:100%;
+    /* opacity: 0; */
+}
+body:before {
+    content: ' ';
+    display: block;
+    position: absolute  ;
+    left: 0;
+    top:5%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.material-icons{
+    color: white;
+    width: min-content;
+}
+.material-icons:hover{
+    cursor: pointer;
+    background-color: black;
+    padding: 5%;
+    font-size: 120%;
+}
+.sideNavBar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width:18%;
+    background-color: grey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1%;
+    overflow-y:auto;
+
+}
+#sideNavBarTitle{
+    color: white;
+}
+#menuIcon{
+    font-size: 150%;
+}
+#accountBalance{
+    font-size: 250%;
+}
+#sideNavBarTitle{
+    font-size: 70%;
+    margin-bottom: 0;
+}
+#sideNavBarSubitle{
+    color: rgb(180, 176, 176);
+    font-size: 50%;
+
+}
+.sideNavBarTop{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.sideNavBarTop > div{
+    margin-bottom: 20%;
+}
+.sideNavBarTop #accountBalance{
+    margin-bottom: 2%;
+}
+.sideNavBarLinks{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%t;
+}
+.linkItem{
+    width: 100%;
+    color: #fff;
+    font-size: small;
+    margin-top: 10%;
+    text-decoration: none;
+}
+
+.linkTitle{
+    margin-left: 10%;
+    font-size: 100%;
+    /* display: none; */
+
+}
+@media(max-width:1000px){
+    .linkTitle{
+        display: block;
+        margin-left: 0;
+    }
+}
+@media(max-width:800px){
+    .linkTitle{
+        display: none;
+    }
 }

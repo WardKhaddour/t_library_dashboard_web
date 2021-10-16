@@ -1,8 +1,7 @@
 *{
     box-sizing: border-box;
     font-size: 20px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    font-family: 'Courier New', Courier, monospace;
 }
 body{
     background-image: url(../images/login_background.png);
@@ -55,8 +54,12 @@ input:focus{
     width: fit-content;
     background-color: white;
     opacity: 0.55;
-    position: relative;right: -30%;
+    color: #1F211F;
+    font-weight: bold;
+    font-size: 17px;
+    /* position: relative;right: -35%; */
 }
+
 #passwordAlert,#emailAlert{
     color: red;
     font-size: 60%;
