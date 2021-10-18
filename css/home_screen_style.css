@@ -85,13 +85,7 @@ body:before {
 }
 .sideNavBarTop #accountBalance{
     margin-bottom: 2%;
-}
-#sideNavBarLinks{
-    width: 100%;
-    /* display: grid; */
-    grid-template-columns: 100%t;
-    /* overflow: scroll; */
-}
+ }
 .linkItem{
     width: 100%;
     color: #fff;
@@ -115,19 +109,22 @@ body:before {
     display:none;
 }
 
-
 .hideTitles{
     display:none;
+    
 }
 .showTitles{
     display:grid ;
-    
+    width: 100%;
+    /* display: grid; */
+    grid-template-columns: 100%;
+    /* overflow: scroll; */
 }
 
 .showSettings{
     display:flex;
     animation-name: openSettings;
-    animation-duration: 1500ms;
+    animation-duration: 500ms;
 }
 #accountSettings{
     color: white;
@@ -136,7 +133,7 @@ body:before {
     flex-direction: column;
     position:relative;
     
-    bottom: 18%;
+    bottom: 8%;
     left: 95%;
 }
 .accoutSettingsItem{
@@ -153,20 +150,44 @@ body:before {
     .linkTitle{
         display: none;
     }
+    @keyframes hideNavBar{
+        from {width: 18%;}
+        to {width: 5%;}
+    }
+    
 }
 
 
 @keyframes openSettings {
     from {background-color: grey;}
     to {background-color: black;}
-      
+    from{width: 0%;}
+    to{width: 100%;}
+    from{
+        position: relative;
+        bottom: 30%;
+        left: 40%;
+    }
+    to{
+        position:relative;
+        bottom: 8%;
+        left: 95%;
+    }
 }
+
+@keyframes closeSettings{
+    from{width: 100%;}
+    to{width: 0;}
+    from {background-color: black;}
+    to {background-color: grey;}
+}
+
 @keyframes showNavBar {
-    from {width: 8%;}
+    from {width: 4%;}
     to {width: 18%;}
       
 }
 @keyframes hideNavBar{
     from {width: 18%;}
-    to {width: 8%;}
+    to {width: 4%;}
 }

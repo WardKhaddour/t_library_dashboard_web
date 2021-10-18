@@ -13,8 +13,11 @@ accountSettingsBtn.addEventListener('click',function (){
 const menuBtn=document.getElementById('menuIcon');
 menuBtn.addEventListener('click',function(){
     const sideBarLinks=document.getElementById('sideNavBarLinks');
-   if( sideBarLinks.className==='hideTitles'){
+    const sideBarTitles=document.getElementById("sideNavBarTitles");
+
+   if( sideBarLinks.className==='hideTitles' && sideBarTitles.className==='hideTitles'){
     sideBarLinks.className='showTitles';
+    sideBarTitles.className='showTitles';
     // document.getElementById("sideNavBar").style.width = "18%";
     document.getElementById("sideNavBar").style.animation = "showNavBar 1s";
         document.getElementById("sideNavBar").style.width = "18%";
@@ -24,7 +27,9 @@ menuBtn.addEventListener('click',function(){
    }
    else{
         document.getElementById("sideNavBar").style.animation = "hideNavBar 1s";
-        document.getElementById("sideNavBar").style.width = "8%";
+        document.getElementById("sideNavBar").style.width = "4%";
         sideBarLinks.className='hideTitles';
+        sideBarTitles.className='hideTitles';
+        document.getElementById('accountSettings').className='hide';
    }
 });
