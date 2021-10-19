@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    console.log('REady');
+})
+
 const accountSettingsBtn=document.getElementById('account');
 accountSettingsBtn.addEventListener('click',function (){
     console.log('clicked');

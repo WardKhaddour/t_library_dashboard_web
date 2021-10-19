@@ -44,19 +44,31 @@ async function logIn() {
 
     if (validate(email, password) === false) return;
     console.log("Valid!");
-    // window.location.href = '../html/home.html';
     try {
-        var xhr = new XMLHttpRequest();
         const url = 'http://127.0.0.1:8000/api/loginAdmin';
         const data = {
-            "email":"kub.meggie@example.com",
-            "password":"password",
+            "email":email,
+            "password":password,
         };
         const jsonData = JSON.stringify(data);
+        const response=await fetch(url,{
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            method:'POST',
+            body:jsonData,
+        });
 
-        xhr.open("POST", url, true);
-        console.log("opened");
-        xhr.send(jsonData);
+        var msg= await response.json();
+        if(response.status!==200){
+            document.getElementById('emailAlert').innerHTML
+            = msg;
+            document.getElementById('passwordAlert').innerHTML
+            = msg;
+        }else{
+            window.location.href = '../html/home.html';
+        }
     } catch (e) {
         console.log(e);
     }
