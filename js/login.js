@@ -1,5 +1,5 @@
 const submitBtn = document.getElementById("submit");
-const loginForm=document.getElementById("loginForm");
+const loginForm = document.getElementById("loginForm");
 submitBtn.addEventListener("click", logIn);
 
 function validate(email, password) {
@@ -28,8 +28,8 @@ function validate(email, password) {
     return false;
 
 }
-loginForm.addEventListener('keyup',function (event){
-    if(event.code==='Enter'){
+loginForm.addEventListener('keyup', function (event) {
+    if (event.code === 'Enter') {
         logIn();
     }
     return;
@@ -46,30 +46,32 @@ async function logIn() {
     console.log("Valid!");
     try {
         const url = 'http://127.0.0.1:8000/api/loginAdmin';
+
         const data = {
-            "email":email,
-            "password":password,
+            "email": email,
+            "password": password,
         };
         const jsonData = JSON.stringify(data);
-        const response=await fetch(url,{
+        const response = await fetch(url, {
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            method:'POST',
-            body:jsonData,
+            method: 'POST',
+            body: jsonData,
         });
 
-        var msg= await response.json();
-        if(response.status!==200){
+        var msg = await response.json();
+        if (response.status !== 200) {
             document.getElementById('emailAlert').innerHTML
-            = msg;
+                = msg;
             document.getElementById('passwordAlert').innerHTML
-            = msg;
-        }else{
+                = msg;
+        } else {
             window.location.href = '../html/home.html';
         }
     } catch (e) {
+        console.log('here is an error');
+        alert('Please check your internet connection');
         console.log(e);
     }
 }

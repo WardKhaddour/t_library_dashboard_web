@@ -148,11 +148,15 @@ body:before {
 }
 @media(max-width:800px){
     .linkTitle{
-        display: none;
+        display: none !important;
     }
+
     @keyframes hideNavBar{
         from {width: 18%;}
-        to {width: 5%;}
+        to {width: 6%;}
+    }
+    .material-icons-outlined{
+        font-size: 100%;
     }
     
 }
@@ -183,11 +187,11 @@ body:before {
 }
 
 @keyframes showNavBar {
-    from {width: 4%;}
+    from {width: 6%;}
     to {width: 18%;}
       
 }
 @keyframes hideNavBar{
     from {width: 18%;}
-    to {width: 4%;}
+    to {width: 6%;}
 }
